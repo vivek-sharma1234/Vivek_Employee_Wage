@@ -45,4 +45,10 @@ function calculateDailyWages() {
     let dailyWages = workedHours * wagesPerHour;
     return { dailyWages, workedHours }; // Return both wages and hours
   }
-  calculateDailyWages();
+  //calculateDailyWages();
+
+  //Use Case3 refactor the code and find the work hours
+// Function to check attendance and calculate wages if present
+let result = calculateDailyWages();
+console.log("Total worked hours: " + result.workedHours);
+console.log("Final wages: $" + result.dailyWages);

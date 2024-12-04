@@ -4,11 +4,11 @@ function checkAttendance() {
     let employee = Math.random();
     // Check whether the employee is present or not
     if (employee < 0.5) {
-      console.log("Absent");
-      //return "Absent";
+      //console.log("Absent");
+      return "Absent";
     } else {
-      console.log("Present");
-      //return "Present";
+      //console.log("Present");
+      return "Present";
     }
   }
   checkAttendance();
@@ -27,19 +27,19 @@ function calculateDailyWages() {
     switch (employeeType) {
       case 0:
         workedHours = 0;
-        console.log("No Time worked");
+        //console.log("No Time worked");
         break;
       case 1:
         workedHours = partTimeHours;
-        console.log("Part Time Worked");
+        //console.log("Part Time Worked");
         break;
       case 2:
         workedHours = fullTimeHours;
-        console.log("Full Time Worked");
+        //console.log("Full Time Worked");
         break;
       default:
         workedHours = 0;
-        console.log("Invalid Output");
+        //console.log("Invalid Output");
     }
   
     let dailyWages = workedHours * wagesPerHour;
@@ -49,6 +49,30 @@ function calculateDailyWages() {
 
   //Use Case3 refactor the code and find the work hours
 // Function to check attendance and calculate wages if present
-let result = calculateDailyWages();
-console.log("Total worked hours: " + result.workedHours);
-console.log("Final wages: $" + result.dailyWages);
+// /let result = calculateDailyWages();
+// /console.log("Total worked hours: " + result.workedHours);
+// /console.log("Final wages: $" + result.dailyWages);
+
+//Use case 4 using the for loop
+function monthlySalary() {
+    let totalHours = 0;
+    let Salary = 0;
+    let totalDays = 0;
+  
+    for (let i = 0; i < 20; i++) {
+      let attendance = checkAttendance();
+      if (attendance) {
+        let result = calculateDailyWages();
+        totalDays++;
+        totalHours += result.workedHours;
+        Salary += result.dailyWages;
+      }
+    }
+    console.log(
+      "The Employee worked hours:",
+      totalHours,
+      "and montly salary:",
+      Salary
+    );
+  }
+  monthlySalary()

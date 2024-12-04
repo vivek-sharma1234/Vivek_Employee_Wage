@@ -75,4 +75,26 @@ function monthlySalary() {
       Salary
     );
   }
-  monthlySalary()
+  //monthlySalary()
+  function monthlyWages() {
+    let totalHours = 0;
+    let Salary = 0;
+    let totalDays = 0;
+  
+    while(totalDays<20 && totalHours<160) {
+      let attendance = checkAttendance();
+      if (attendance) {
+        let result = calculateDailyWages();
+        totalDays++;
+        totalHours += result.workedHours;
+        Salary += result.dailyWages;
+      }
+    }
+    console.log(
+      "The Employee worked hours:",
+      totalHours,
+      ", montly salary:",
+      Salary, "and total days " , totalDays
+    );
+  }
+  monthlyWages()
